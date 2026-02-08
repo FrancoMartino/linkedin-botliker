@@ -1,17 +1,6 @@
-# Botliker - Automatización para LinkedIn
+# LinkedIn Botliker - Automatización para LinkedIn
 
-**Botliker** es una extensión de Chrome diseñada para automatizar interacciones en LinkedIn, específicamente dar "Me gusta" a publicaciones en el feed, simulando un comportamiento humano para evitar ser detectado. Opera a través de múltiples pestañas de manera secuencial, ofreciendo una herramienta potente para mantener actividad en la plataforma.
-
-## 🚀 Características
-
-*   **Likes Automatizados**: Identifica y hace clic automáticamente en los botones de "Me gusta" en las publicaciones de tu feed.
-    *   *Detección Inteligente*: Verifica el estado `aria-pressed` para asegurar que solo da like a publicaciones que aún no lo tienen, evitando quitar likes por accidente.
-*   **Gestión Multi-Pestaña**: Alterna cíclicamente entre múltiples pestañas abiertas de LinkedIn, permitiendo simular actividad concurrente en diferentes feeds o perfiles.
-*   **Simulación Humana**:
-    *   **Scroll Suave**: Se desplaza por el feed de manera natural para ir cargando y reconociendo elementos.
-    *   **Delays Aleatorios**: Tiempos de espera configurables y aleatorios antes de hacer clic y entre acciones de scroll para imitar patrones de lectura e interacción humanos.
-*   **Configuración Personalizable**: Control total sobre velocidad, tiempos de espera y límites a través de una interfaz popup amigable.
-*   **Control de Sesión**: Inicia, Pausa y Detén la automatización en cualquier momento.
+**LinkedIn Botliker** es una extensión de Chrome diseñada para automatizar interacciones en LinkedIn, específicamente dar "Me gusta" a publicaciones en el feed, simulando un comportamiento humano para evitar ser detectado. Opera a través de múltiples pestañas de manera secuencial, ofreciendo una herramienta potente para mantener actividad en la plataforma.
 
 ## 🛠 Instalación
 
@@ -19,13 +8,13 @@
 2.  Abre Google Chrome y navega a `chrome://extensions/`.
 3.  Activa el **Modo de desarrollador** en la esquina superior derecha.
 4.  Haz clic en **Cargar descomprimida** (Load unpacked).
-5.  Selecciona la carpeta donde guardaste los archivos de **Botliker**.
+5.  Selecciona la carpeta donde guardaste los archivos de **LinkedIn Botliker**.
 6.  La extensión debería aparecer ahora en la barra de herramientas de tu navegador.
 
 ## 📖 Cómo Usar
 
 1.  Abre una o más pestañas con **LinkedIn** (ej. tu feed de inicio).
-2.  Haz clic en el icono de **Botliker** en la barra de herramientas de Chrome.
+2.  Haz clic en el icono de **LinkedIn Botliker** en la barra de herramientas de Chrome.
 3.  Configura tus preferencias en el popup:
     *   **Pestañas Máximas**: Número de pestañas de LinkedIn que gestionará el bot.
     *   **Tiempo por Tab**: Cuánto tiempo (en segundos) permanece el bot en una pestaña antes de cambiar a la siguiente.

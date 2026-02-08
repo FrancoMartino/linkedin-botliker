@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Botliker - LinkedIn Automation",
+    "name": "LinkedIn Botliker",
     "version": "1.0",
     "description": "Automatización de likes y navegación secuencial en LinkedIn.",
     "permissions": [
