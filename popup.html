@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --li-blue: rgb(10, 102, 194);
+            --li-blue-hover: #004182;
+            --li-bg: #f3f2ef;
+            --li-white: #ffffff;
+            --li-text-dark: #191919;
+            --li-text-gray: #666666;
+            --li-border: #e0e0e0;
+            --li-input-border: #00000099;
+            --li-danger: #d11124;
+            --li-pause: #b24020;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            width: 550px;
+            margin: 0;
+            padding: 0;
+            background-color: var(--li-bg);
+            color: var(--li-text-dark);
+        }
+
+        header {
+            background-color: var(--li-white);
+            padding: 8px 16px;
+            border-bottom: 1px solid var(--li-border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: var(--li-blue);
+            height: 24px;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--li-blue);
+            margin: 0;
+        }
+
+        main {
+            padding: 12px;
+        }
+
+        .card {
+            background-color: var(--li-white);
+            border-radius: 8px;
+            border: 1px solid var(--li-border);
+            padding: 16px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 20px;
+        }
+
+        .illustration-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .illustration-container img {
+            max-width: 77%;
+            height: auto;
+        }
+
+        .section-title {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--li-blue);
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--li-bg);
+            padding-bottom: 4px;
+        }
+
+        .control-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--li-text-gray);
+            margin-bottom: 4px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 6px 10px;
+            font-size: 13px;
+            border: 1px solid var(--li-input-border);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid var(--li-border);
+        }
+
+        button {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 16px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #startBtn {
+            background-color: var(--li-blue);
+            color: white;
+        }
+
+        #startBtn:hover {
+            background-color: var(--li-blue-hover);
+        }
+
+        #pauseBtn {
+            background-color: white;
+            color: var(--li-pause);
+            border: 1px solid var(--li-pause);
+            display: none;
+        }
+
+        #stopBtn {
+            background-color: white;
+            color: var(--li-text-gray);
+            border: 1px solid var(--li-text-gray);
+            display: none;
+        }
+
+        .status-bar {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ccc;
+        }
+
+        .status-text {
+            font-size: 11px;
+            color: var(--li-text-gray);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="img/icon512.png" class="logo" alt="Logo">
+        <h1>Botliker</h1>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="grid-container">
+                <div class="col">
+                    <span class="section-title">Navegación</span>
+                    <div class="control-group">
+                        <label for="maxTabs">Pestañas Máximas</label>
+                        <input type="number" id="maxTabs" value="5">
+                    </div>
+                    <div class="control-group">
+                        <label for="tabSwitchTime">Tiempo por Tab (s)</label>
+                        <input type="number" id="tabSwitchTime" value="20">
+                    </div>
+
+                    <label style="margin-top:15px; display:block; font-size:11px; font-weight:700;">SCROLL</label>
+                    <div class="control-group">
+                        <label for="scrollSpeed">Velocidad (px)</label>
+                        <input type="number" id="scrollSpeed" value="25">
+                    </div>
+                    <div class="flex-row">
+                        <div class="control-group">
+                            <label>Intervalo Min</label>
+                            <input type="number" id="minScrollInterval" value="100">
+                        </div>
+                        <div class="control-group">
+                            <label>Intervalo Max</label>
+                            <input type="number" id="maxScrollInterval" value="200">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <span class="section-title">Interacción (Delays ms)</span>
+
+                    <label>Antes del Click (Pre-Click)</label>
+                    <div class="flex-row" style="margin-bottom: 12px;">
+                        <div class="control-group">
+                            <label>Mínimo</label>
+                            <input type="number" id="minPreClickDelay" value="500">
+                        </div>
+                        <div class="control-group">
+                            <label>Máximo</label>
+                            <input type="number" id="maxPreClickDelay" value="1500">
+                        </div>
+                    </div>
+
+                    <div class="illustration-container">
+                        <img src="img/illustration.png" alt="Botliker Illustration">
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button id="startBtn">Iniciar</button>
+                <button id="pauseBtn">Pausar</button>
+                <button id="stopBtn">Detener</button>
+            </div>
+
+            <div class="status-bar">
+                <div class="status-dot" id="statusDot"></div>
+                <span class="status-text" id="statusText">Listo para iniciar</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
